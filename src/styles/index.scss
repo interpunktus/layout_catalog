@@ -90,6 +90,7 @@ html {
       height: 4px;
       border-radius: 8px;
       background-color: var(--blue-color);
+      transition: background-color 0.3s ease, transform 0.3s ease;
     }
   }
 }
