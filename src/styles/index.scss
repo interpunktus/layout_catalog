@@ -146,6 +146,8 @@ html {
     line-height: 18px;
     color: $color-secondary;
     margin: 0;
+
+    @include smooth-hover;
   }
 
   &:hover {
