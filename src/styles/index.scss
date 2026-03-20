@@ -1,8 +1,5 @@
 @import 'variables';
-
-@mixin transition($property, $duration: 0.3s, $timing: ease) {
-  transition: $property $duration $timing;
-}
+@import 'mixins';
 
 body {
   color: #000;
@@ -73,7 +70,7 @@ html {
   display: flex;
   align-items: center;
 
-  @include transition(color);
+  @include smooth-hover;
 
   &:hover {
     color: #00acdc;
@@ -140,7 +137,7 @@ html {
   border-width: 1px;
   gap: 40px;
 
-  @include transition(transform);
+  @include smooth-hover;
 
   &__desc {
     font-weight: 500;
@@ -230,10 +227,8 @@ html {
   font-weight: 700;
   font-size: 14px;
   text-transform: uppercase;
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease,
-    border-color 0.3s ease;
+
+  @include smooth-hover;
 
   &:hover {
     color: #00acdc;
