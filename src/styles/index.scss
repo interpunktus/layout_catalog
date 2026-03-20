@@ -66,7 +66,7 @@ html {
   text-transform: uppercase;
   text-decoration: none;
   color: $color-secondary;
-  height: 15px;
+  height: 60px;
   position: relative;
   display: flex;
   align-items: center;
@@ -74,22 +74,23 @@ html {
   @include smooth-hover;
 
   &:hover {
-    color: #00acdc;
+    color: $color-primary;
   }
 
   &.is-active {
     position: relative;
-    color: var(--blue-color);
+    color: $color-primary;
+    ;
 
     &::after {
       content: '';
       position: absolute;
       left: 0;
       right: 0;
-      bottom: -23px;
+      bottom: 0;
       height: 4px;
       border-radius: 8px;
-      background-color: var(--blue-color);
+      background-color: $color-primary;
       transition: background-color 0.3s ease, transform 0.3s ease;
     }
   }
@@ -100,12 +101,15 @@ html {
   display: flex;
   justify-content: center;
   padding: 50px 40px;
+  overflow: visible;
 }
 
 .main {
   display: grid;
+  justify-content: center;
   grid-template-columns: repeat(1, 200px);
   gap: 46px 48px;
+  overflow: visible;
 }
 
 @media (min-width: 488px) {
@@ -131,7 +135,7 @@ html {
   display: flex;
   flex-direction: column;
   width: 200px;
-  height: 406px;
+  height: 408px;
   background-color: $color-background;
   border-color: #f3f3f3;
   border-style: solid;
@@ -141,7 +145,7 @@ html {
 
   @include smooth-hover;
 
-  &__desc {
+  &__title {
     font-weight: 500;
     font-size: $font-size;
     line-height: 18px;
@@ -153,7 +157,7 @@ html {
 
   &:hover {
     transform: scale(1.2);
-    .card__desc {
+    .card__title {
       color: #34568b;
     }
   }
