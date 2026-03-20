@@ -1,3 +1,14 @@
+$color-primary: #00acdc;
+$color-secondary: #060b35;
+$color-text: #616070;
+$color-background: #fff;
+$font-size: 12px;
+$font-size-card: 10px;
+
+@mixin transition($property, $duration: 0.3s, $timing: ease) {
+  transition: $property $duration $timing;
+}
+
 body {
   color: #000;
   box-sizing: border-box;
@@ -48,7 +59,7 @@ html {
 }
 
 .nav__item {
-  font-size: 12px;
+  font-size: $font-size;
   margin-top: 22px;
   margin-bottom: 23px;
   padding: 0;
@@ -61,11 +72,13 @@ html {
 .nav__link {
   text-transform: uppercase;
   text-decoration: none;
-  color: #060b35;
+  color: $color-secondary;
   height: 15px;
   position: relative;
   display: flex;
   align-items: center;
+
+  @include transition(color);
 
   &:hover {
     color: #00acdc;
@@ -103,19 +116,19 @@ html {
 
 @media (min-width: 488px) {
   .main {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 200px);
   }
 }
 
 @media (min-width: 768px) {
   .main {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 200px);
   }
 }
 
 @media (min-width: 1024px) {
   .main {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 200px);
   }
 }
 
@@ -125,19 +138,20 @@ html {
   flex-direction: column;
   width: 200px;
   height: 406px;
-  background-color: #fff;
+  background-color: $color-background;
   border-color: #f3f3f3;
   border-style: solid;
   border-radius: 5px;
   border-width: 1px;
   gap: 40px;
-  transition: transform 0.3s ease;
+
+  @include transition(transform);
 
   &__desc {
     font-weight: 500;
-    font-size: 12px;
+    font-size: $font-size;
     line-height: 18px;
-    color: #060b35;
+    color: $color-secondary;
     margin: 0;
   }
 
@@ -160,9 +174,9 @@ html {
 }
 
 .card__code {
-  color: #616070;
+  color: $color-text;
   font-weight: 400;
-  font-size: 10px;
+  font-size: $font-size-card;
   margin-top: 4px;
   margin-right: 68px;
   margin-bottom: 0;
@@ -179,8 +193,8 @@ html {
 
 .card__review-count {
   font-weight: 400;
-  font-size: 10px;
-  color: #060b35;
+  font-size: $font-size-card;
+  color: $color-secondary;
 }
 
 .card__price {
@@ -194,15 +208,15 @@ html {
 
 .card__price-label {
   font-weight: 400;
-  font-size: 12px;
-  color: #616070;
+  font-size: $font-size;
+  color: $color-text;
   margin: 0;
 }
 
 .card__price-value {
   font-weight: 700;
   font-size: 16px;
-  color: #060b35;
+  color: $color-secondary;
   margin: 0;
 }
 
@@ -217,17 +231,21 @@ html {
   height: 40px;
   border-radius: 5px;
   background-color: #00acdc;
-  color: #fff;
+  color: $color-background;
   font-weight: 700;
   font-size: 14px;
   text-transform: uppercase;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
 
   &:hover {
     color: #00acdc;
     border-color: #00acdc;
     border-style: solid;
     border-width: 1px;
-    background-color: #fff;
+    background-color: $color-background;
   }
 }
 
